@@ -57,7 +57,7 @@ deepnet = train(deepnet,X1,Ttrain);
 y = deepnet(Xtest);
 plotconfusion(Ttest,y);
 
-save('deepnet_autoenc_pfph_rgbdscenes.mat', 'deepnet');
+save('deepnet_autoenc_fpfh_rgbdscene.mat', 'deepnet');
 
 
 
