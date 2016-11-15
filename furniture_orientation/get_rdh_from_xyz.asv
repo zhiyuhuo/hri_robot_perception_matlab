@@ -1,0 +1,15 @@
+function res = get_rdh_from_xyz(xyz) %r - radiu; d - direction; h - height.
+
+cx = ( max(xyz(:,1)) + min(xyz(:,1)) ) / 2;
+cy = ( max(xyz(:,2)) + min(xyz(:,2)) ) / 2;
+
+xyz(:,1) = xyz(:,1) - cx;
+xyz(:,2) = xyz(:,2) - cy;
+
+rdh = 
+
+for i = 1:size(xyz, 1)
+    d = 
+end
+
+end

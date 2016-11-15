@@ -1,0 +1,17 @@
+function [angle, ratio] = get_orientation_angle(normal)
+
+for i = 1:size(normal, 1)
+
+x = normal(1);
+y = normal(2);
+z = normal(3);
+
+angle = atan2(y, x);
+angle = norm_angle(angle);
+angle = rad2deg(angle);
+
+ratio = abs(norm([x y]) / z);
+
+end
+
+end

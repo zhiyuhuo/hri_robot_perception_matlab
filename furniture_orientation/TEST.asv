@@ -1,0 +1,37 @@
+clc;
+clear;
+close all;
+%
+
+id = 1;
+oname = [ num2str(id) '/orientation.txt' ];
+orientation = load(oname);
+
+map = zeros(10, 10);
+for n = 0:23
+    fname = [ num2str(id) '/f-' num2str(id) '-' num2str(n) '.matdata']
+    data = load(fname);
+    gangle = orientation(n+1);
+    xyz = data(:,1:3);
+    normal = data(:,4:6);
+%     [angle, ratio] = get_orientation_angle(normal);
+    [angle, ratio] = get_inner_orientation_angle(normal, xyz)
+    [rdh rh] = get_rdh_from_xyz(xyz);
+    f = [rh ratio];
+    o = angle;
+    t = orientation(n+1);
+    
+    d = o - t;
+    MP = find(d > 180);
+    MN = find(d < -180);  
+    d(MP) = d(MP) - 360;
+    d(MN) = d(MN) + 360;
+    d = abs(d) / 180;
+    
+    for k = 1:size(o, 1)        
+        if dk
+        map(f(k,1), f(k,2)) = map(f(k,1), f(k,2)) + d(k);
+    end
+    map = map / size(o, 1);
+    
+end

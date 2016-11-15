@@ -1,0 +1,15 @@
+function res = angle_diff(a1, a2)
+
+dth = a1 - a2;
+while dth > pi
+    dth = dth - 2 * pi;
+end
+
+while dth < -pi
+    dth = dth + 2 * pi;
+end
+
+dth = abs(dth);
+res = dth;
+
+end

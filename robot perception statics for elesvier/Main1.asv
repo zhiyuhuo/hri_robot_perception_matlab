@@ -1,0 +1,21 @@
+clc;
+close all;
+clear;
+%
+
+for i = 1:6
+    for j = 1:8
+        fname = 'objects_3dwarehouse\pc\office_chair\office_chair_6_0.ply'
+    end
+end
+
+data = readPly('objects_3dwarehouse\pc\office_chair\office_chair_6_0.ply');
+X = data(1:10:end, 1);
+Y = data(1:10:end, 2);
+Z = data(1:10:end, 3);
+% X = data(:, 1);
+% Y = data(:, 2);
+% Z = data(:, 3);
+scatter3(X, Y, Z, '.');
+
+% dlmwrite('chairsample.txt', data);

@@ -1,0 +1,13 @@
+function res = generate_gs(data, angle)
+
+data = data(find(~isnan(data(:,4))), :);
+% scatter3(data(:,1), data(:,2), data(:,3), '.');
+f = zeros(10, 10);
+cxy = get_xy_centroid(data);
+
+for i = 1:length(data)
+    xyz = data(i, 1:3);
+    [r h] = get_f(xyz, cxy);
+end
+
+end
