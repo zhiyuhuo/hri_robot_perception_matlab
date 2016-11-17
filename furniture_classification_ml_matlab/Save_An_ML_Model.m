@@ -6,7 +6,7 @@ close all;
 dataset = load('apartment_normal_data_1d.mat');
 dataset = dataset.data;
 rbfsigma = 20;
-kernelstr = 'RBF';
+kernelstr = 'Linear';
 
 category = 1;
 [model, acc] = train_a_single_furniture_svm_model(dataset, category, kernelstr);
