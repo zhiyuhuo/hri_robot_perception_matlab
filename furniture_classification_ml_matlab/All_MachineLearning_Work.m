@@ -2,7 +2,7 @@ clc;
 close all;
 clear;
 
-categories_set = {[1 2 3 4 5], [1 2 4]};
+categories_set = {[1 2 3 4], [1 2 3]};
 datasources = {'apartment_normal_data_1d.mat', 'rgbdscene_normal_data_1d.mat', 'apartment_fpfh_data_1d.mat', 'rgbdscene_fpfh_data_1d.mat'};
 
 for datasource_id = 1:length(datasources)

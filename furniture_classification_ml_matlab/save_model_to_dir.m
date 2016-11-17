@@ -1,12 +1,12 @@
-function res = save_model_to_dir(folderdir, model)
+function res = save_model_to_dir(folderdir, model, rbfsigma)
 
 supportvectors = model.SupportVectors;
 alpha = model.Alpha;
 bias = model.Bias;
-group = model.GroupNames(model.SupportVectorIndices);
-scalefactor = model.ScaleData.scaleFactor;
-shift = model.ScaleData.shift;
-sigma = model.Sigma;
+group = model.SupportVectorLabels;
+scalefactor = model.Sigma;
+shift = model.Mu;
+sigma = rbfsigma;
 
 supportvectors(find(abs(supportvectors) < 0.000001)) = 0;
 alpha(find(abs(alpha) < 0.000001)) = 0;

@@ -9,7 +9,7 @@ close all;
 rootdir = '/home/hri/Samples/FPFH/rgbd_scene/';
 
 classname = {'coffee_table', 'office_chair', 'sofa', 'table'};
-classid = [1,2,4,1]
+classid = [1,2,3,1]
 feature2d = zeros(10, 10, 33+1);
 
 dataset = {};

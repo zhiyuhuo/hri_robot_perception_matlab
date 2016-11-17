@@ -9,7 +9,7 @@ close all;
 rootdir = '/home/hri/Samples/FPFH/hri_apartment/';
 
 samplenums = [32 24 36 24 36 32 24 24];
-classid = [1,2,1,2,1,3,4,5]
+classid = [1,2,1,2,1,1,3,4]
 feature2d = zeros(10, 10, 33+1);
 
 dataset = {};
