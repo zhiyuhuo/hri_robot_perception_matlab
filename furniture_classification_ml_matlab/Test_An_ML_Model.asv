@@ -1,0 +1,27 @@
+clc;
+close all;
+clear;
+%
+
+dataset = load('apartment_normal_data_1d.mat');
+dataset = dataset.data;
+X = dataset.X';
+T = dataset.Y;
+
+
+
+% for table class
+classtype = 'table';
+T(find(T ~= 1)) = -1;
+alpha = load(['models_for_ros/' classtype '/alpha.txt']);
+beta = load(['models_for_ros/' classtype '/beta.txt']);
+bias = load(['models_for_ros/' classtype '/bias.txt']);
+lscale = load(['models_for_ros/' classtype '/lscale.txt']);
+
+Y = T;
+for i = 1:size(X,1)
+    x = X(i,:) / lscale;
+    t = T(i);
+    y = x * beta + bias;
+    Y(i) = y;
+end
