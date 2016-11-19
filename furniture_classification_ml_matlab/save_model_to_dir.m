@@ -7,12 +7,12 @@ group = model.GroupNames(model.SupportVectorIndices);
 shift = model.ScaleData.shift;
 scale = model.ScaleData.scaleFactor;
 
-supportvectors(find(abs(supportvectors) < 0.000001)) = 0;
-alpha(find(abs(alpha) < 0.000001)) = 0;
-bias(find(abs(bias) < 0.000001)) = 0;
-group(find(abs(group) < 0.000001)) = 0;
-scale(find(abs(scale) < 0.000001)) = 0;
-shift(find(abs(shift) < 0.000001)) = 0;
+supportvectors(find(abs(supportvectors) < 0.000000001)) = 0;
+alpha(find(abs(alpha) < 0.000000001)) = 0;
+bias(find(abs(bias) < 0.000000001)) = 0;
+group(find(abs(group) < 0.000000001)) = 0;
+scale(find(abs(scale) < 0.000000001)) = 0;
+shift(find(abs(shift) < 0.000000001)) = 0;
 
 dlmwrite([folderdir '/supportvectors.txt'], supportvectors);
 dlmwrite([folderdir '/alpha.txt'], alpha);

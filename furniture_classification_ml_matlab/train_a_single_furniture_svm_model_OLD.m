@@ -2,11 +2,11 @@ function [model, acc] = train_a_single_furniture_svm_model_OLD(dataset, category
 
 X = dataset.X';
 Y = dataset.Y;
-idx_train = randsample(size(X,1), ceil(size(X,1) * 2/3));
+idx_train = randsample(size(X,1), ceil(size(X,1) * 1/2));
 idx_test = setdiff([1:size(X,1)], idx_train);
 
 %for the final training
-idx_train = [1:size(X,1)];
+% idx_train = [1:size(X,1)];
 
 Xtrain = X(idx_train,:);
 Xtest = X(idx_test,:);
