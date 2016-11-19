@@ -25,7 +25,7 @@ for r = 0:7
         y = data(:,2) - center(2);
         d = ceil(sqrt(x.^2 + y.^2) / 0.1);
         h = ceil(data(:,3) / 0.1);
-        th = atan(data(:,6) ./ sqrt(data(:,4).^2 + data(:,5).^2)) / (pi/2);
+        th = abs(atan(data(:,6) ./ sqrt(data(:,4).^2 + data(:,5).^2))) / (pi/2);
         
         idx = find(~isnan(th) & d <= 10 & d <= 10);
         d = d(idx);
