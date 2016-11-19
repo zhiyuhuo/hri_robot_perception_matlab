@@ -4,9 +4,9 @@ close all;
 %
 
 % for windows
-% rootdir = 'C:/Users/zhdy7/Documents/Samples/Normal/hri_apartment/';
+rootdir = 'C:/Users/zhdy7/Documents/Samples/Normal/hri_apartment/';
 % for linux
-rootdir = '/home/hri/Samples/Normal/hri_apartment/';
+% rootdir = '/home/hri/Samples/Normal/hri_apartment/';
 
 samplenums = [32 24 36 24 36 32 24 24];
 classid = [1,2,1,2,1,1,3,4]
@@ -32,6 +32,7 @@ for r = 0:7
         h = h(idx);
         th = th(idx);
         
+        feature2d = zeros(10, 10, 2); 
         for i = 1:size(d)
             feature2d(h(i), d(i), 1) = feature2d(h(i), d(i), 1) + th(i);
             feature2d(h(i), d(i), 2) = feature2d(h(i), d(i), 2) + 1;
